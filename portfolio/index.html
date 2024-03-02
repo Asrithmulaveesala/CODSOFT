@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.2"> <!-- Increased initial-scale -->
+    <title>Asrith's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f5f9;
+            color: #ffffff;
+            font-size: larger; /* Increased font size */
+        }
+        .header-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #52616b; /* Set a common background color */
+    padding: 1em 0; /* Set common padding */
+    border-bottom: 5px solid #555555;
+    margin-bottom: -19px;
+}
+
+.header-nav-container h1 {
+    margin-right: auto;
+}
+
+.header-nav-container nav {
+    text-align: right;
+}
+
+.header-nav-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav-container a {
+    color: #ffffff; /* Set a common text color */
+    text-decoration: none;
+    padding: 1em 1.5em;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.header-nav-container a:hover {
+    background-color: #555555;
+}
+
+
+        .text {
+            margin: 1rem;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        header {
+            background-color: #52616b;
+            color: #ffffff;
+            text-align: start;
+            padding: 1em 0;
+            border-bottom: 5px solid #555555;
+            margin-bottom: -19px;
+        }
+
+        nav {
+            background-color: #52616b;
+            padding: 0.5em 0;
+            text-align: right;
+        }
+
+        .action {
+            tab-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: right;
+            font-size: larger;
+        }
+
+        nav a {
+            color: #090909;
+            text-decoration: none;
+            padding: 1em 1.5em; 
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border-radius: 5px; 
+            display: inline-block; 
+        }
+
+        nav a:hover {
+            background-color:#090909;
+        }
+
+        section {
+            margin: 20px auto;
+            color: #1e2022;
+            padding: 20px;
+            background-color: #c9d6df;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(22, 20, 20, 0.1);
+        }
+
+        .asrith {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 30%;
+            order: 1;
+        }
+
+        .profile-photo img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .about-me {
+            width: 60%;
+            order: 10PX;
+            color: #1e2022;
+            padding: 20px;
+            width: 80%;
+            margin-top: 20px;
+            background-color: #c9d6df;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(22, 20, 20, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .asrith3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-me1 {
+            width: 60%;
+            order: 1;
+            color: #1e2022;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #c9d6df;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(22, 20, 20, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .about-me1:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-photo1 {
+            width: 30%;
+            order: 2;
+        }
+        
+        
+
+        .profile-photo1 img {
+            max-width: 100%;
+            border-radius: 10%;
+        }
+
+        .about-me:hover {
+            transform: scale(1.05);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1e2022;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #1e2022;
+        }
+
+        .projects {
+            margin-top: 20px;
+        }
+
+        .project-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .project-description {
+            flex: 1 0 calc(48% - 20px);
+            background-color: #c9d6df;
+            padding: 20px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width:max-content;
+        }
+
+        .project-description:hover {
+            transform: scale(1.05);
+        }
+
+        .project-description h3 {
+            color: #007BFF;
+        }
+        .project-description h4 {
+            font-size: x-large;
+            
+        }
+
+        .contacts {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #52616b;
+            color: #ffffff;
+            border-top: 5px solid #555555;
+        }
+        .profile-photo1 img:hover {
+    border: 1px solid #1da1f2; 
+size: 20px;
+}
+
+
+        .button1 a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .button1 {
+            background-color: #b5d4f6;
+            color: #f50b0b;
+            padding: 15px 25px; /* Increased button size */
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block; /* Added display property */
+        }
+
+        .button1:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.facebook-icon {
+  color: #3b5998; /* Facebook blue */
+}
+
+.instagram-icon {
+  color: #e4405f; /* Instagram pink */
+}
+
+.twitter-icon {
+  color: #1da1f2; /* Twitter blue */
+}
+
+.linkedin-icon {
+  color: #0077b5; /* LinkedIn blue */
+}
+        
+
+        .icon-link {
+            margin: 0 10px;
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+     <div class="header-nav-container">
+        <header>
+            <div class="text">
+                <h1>My Portfolio</h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('about')">About</a></li>
+                <li><a onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a onclick="scrollToSection('contact')">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="home" class="asrith3">
+        <div class="profile-photo1">
+            <img src="pic2.png" alt="img_pic2.png">
+        </div>
+
+        <div class="about-me1">
+            <h2>I'M KOUSHIK ASRITH MULAVISALA</h2>
+            <h4>FRONT END DEVELOPER</h4>
+            <p>
+                "Welcome! I'm a Front-end Developer passionate about creating user-friendly websites. With skills in HTML, CSS, and JavaScript, I strive for excellence in every project, whether it's designing layouts or optimizing website performance.,</p>
+            <div class="action">
+                <button class="button1"><a href="CV_2024022319341049.pdf" download>Resume</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="asrith">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p> I'm Asrith Mulavisala, an enthusiastic and detail-focused frontend developer located in Bhimavaram.<br> Driven by a passion for creating fluid and user-centric digital interactions,<br> I excel in translating concepts into visually impressive and operational websites.</p>
+
+            <button class="button1"><a href="PDF.pdf" download>Personal Details</a></button>
+
+        </div>
+    </section>
+
+    <section id="projects" class="asrith">
+        <h2 class="asrith1">Projects</h2>
+        <div class="project-box">
+            <div class="project-description">
+                <h3>Project 1</h3>
+                <h4>Calculator<br></h4>
+                <button class="button1"><a href="https://asrithcalculator.netlify.app/">View Project</a></button>
+            </div>
+            <div class="project-description">
+                <h3>Project 2</h3>
+                <h4> Nutri World<br></h4>
+                <button class="button1"><a href="wadproject documentation[1].pdf" download>View Project</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="asrith">
+        <h2>Contact</h2>
+        <p>Contact me on 8555889146</p>
+        <p> Reach me via email <a href="asrithmulaveesala@email.com">asrithmulaveesala@email.com</a>.</p>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/asrith_mulaveesala/?hl=en" class="icon-link" targrt="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram instagram-icon"></i></a>
+            <a href="https://twitter.com/Asrithkoushik" class="icon-link" target ="_blank" rel="noopener noreferrer"><i class="fab fa-twitter twitter-icon"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61556605623995" class="icon-link"  target ="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook facebook-icon"></i></a>
+            <a href="https://www.linkedin.com/in/asrith-mulaveesala-b94b552b5/" class="icon-link"  target ="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-linkedin linkedin-icon"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Asrithmulavisala Portfolio
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>
