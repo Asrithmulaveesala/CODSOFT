@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color:white;
+    }
+
+    #calculator {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
+
+    #display {
+  font-size: 24px;
+  text-align: right;
+  padding: 15px;
+  margin: 0;
+  overflow: hidden;
+  grid-column: span 2; 
+}
+
+#number-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+
+}
+
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background-color: white;
+    }
+
+    button:active {
+      background-color: #e0e0e0;
+    }
+
+    button.operator {
+      background-color: #ff3333;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+    button.double {
+      width: 100%;
+    }
+    button.revi{
+      border-radius: 25px;
+    }
+
+    button.clear {
+      background-color: #ff3333;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+  
+
+    #operator-buttons {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 5px;
+      padding: 5px;
+      border-radius: 100px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <div id="display">0</div>
+    <div id="number-buttons">
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="calculateResult()" class="double">=</button>
+    </div>
+    <div id="operator-buttons">
+      <button onclick="appendToDisplay('+')">+</button>
+      <button onclick="appendToDisplay('/')">&divide;</button>
+      <button onclick="appendToDisplay('*')">&times;</button>
+      <button onclick="appendToDisplay('-')">-</button>
+      <button onclick="clearDisplay()" class="clear">Clear</button>
+      <button onclick="deleteDigit()" class="operator">del</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function appendToDisplay(value) {
+      if (display.textContent.length < 30) {
+        if (display.textContent === '0' && value !== '.') {
+          display.textContent = value;
+        } else {
+          display.textContent += value;
+        }
+      } else {
+        display.textContent = 'Error: Max 30 digits';
+      }
+    }
+
+    function clearDisplay() {
+      display.textContent = '0';
+    }
+
+    function deleteDigit() {
+      display.textContent = display.textContent.slice(0, -1);
+      if (display.textContent === '') {
+        display.textContent = '0';
+      }
+    }
+
+    function calculateResult() {
+      try {
+        display.textContent = eval(display.textContent);
+      } catch (error) {
+        display.textContent = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
